@@ -1,0 +1,8 @@
+body.siyah {background-color: black; color:white;}
+
+h1 {color: blue; font-size: 24px; height: 100px;}
+h1.siyah {color: red; font-size: 24px}
+
+h1 span{display: block; font-size: 14px; color: black;}
+h1.siyah span{color: white;}
+
