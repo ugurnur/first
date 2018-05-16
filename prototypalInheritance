@@ -1,0 +1,30 @@
+function Vehicle(make, model){
+    this.make = make;
+    this.model = model;
+}
+
+Vehicle.prototype.run = function(){
+    console.log(this);
+    return `${this.make} runs really fast!`;
+}
+
+const myCar = new Vehicle('honda', 'civic');
+
+myCar.run();
+
+function Sports(make, model){
+    //Vehicle.call(this, make, model); 
+    Vehicle.apply(this,arguments); // 
+    this.color="white";
+}
+
+Sports.prototype = Object.create(Vehicle.prototype);
+Sports.prototype.constructor = Sports;
+
+Sports.prototype.go = function(){
+    console.log('go thunder' + this.color);
+}
+
+const fastCar = new Sports('porche', 'thunder');
+fastCar.run()
+fastCar.go();
